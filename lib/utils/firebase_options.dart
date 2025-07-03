@@ -50,24 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBMvbWyCcRvJ8jfWXKN_CzvbLg2x6H7G3c',
-    appId: '1:129788942359:android:87b51751fda0c52c',
-    messagingSenderId: '129788942359',
-    projectId: 'duma-5832e',
-    databaseURL: 'https://duma-5832e.firebaseio.com',
-    storageBucket: 'duma-5832e.appspot.com',
+    apiKey: 'YOUR_API_KEY',
+    appId: 'YOUR_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    databaseURL: 'YOUR_DATABASE_URL',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAoXLi7a-9t8wUIcwkP4NQgcWPzmAh5FkU',
-    appId: '1:129788942359:ios:5946037118187eb642e452',
-    messagingSenderId: '129788942359',
-    projectId: 'duma-5832e',
-    databaseURL: 'https://duma-5832e.firebaseio.com',
-    storageBucket: 'duma-5832e.appspot.com',
-    androidClientId: '129788942359-2ijpisftddipe2aqgda5qmfialrv5m4r.apps.googleusercontent.com',
-    iosClientId: '129788942359-ovjamlf451k3er5us1lb8v826dbsndg9.apps.googleusercontent.com',
-    iosBundleId: 'africa.duma.dumafin',
+    apiKey: 'YOUR_API_KEY',
+    appId: 'YOUR_APP_ID',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    projectId: 'YOUR_PROJECT_ID',
+    databaseURL: 'YOUR_DATABASE_URL',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
   );
 
 }
