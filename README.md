@@ -60,7 +60,7 @@ A clone of Duma Taxi, which is a Flutter application for requesting taxi rides o
 
 ```bash
 git clone https://github.com/AFB317/taxi_clone.git
-cd duma_public
+cd taxi_clone
 ```
 
 2. **Install dependencies:**
