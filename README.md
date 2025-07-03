@@ -18,9 +18,7 @@ A Flutter application for requesting taxi rides or parcel delivery services. Use
 
 | Home Screen | Drivers Map |
 |-------------|-------------|
-| ![Home Screen](screenshots/home.png) | ![Drivers Map](screenshots/map.png) |
-
-> Replace `screenshots/home.png` and `screenshots/map.png` with your actual screenshot paths in the repository.
+| ![Home Screen](screenshots/duma0.png) | ![Drivers Map](screenshots/duma1.png) |
 
 ---
 
