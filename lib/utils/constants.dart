@@ -3,7 +3,6 @@ const String appName = "Duma Taxi";
 
 //SENSITIVE
 const String appId = "YOUR_APP_ID";
-const String baseUrl = "YOUR_URL";
 String iQKey = "YOUR_IQ_KEY";
 
 

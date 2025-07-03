@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:duma_taxi/models/drivers_position.dart';
 import 'package:duma_taxi/utils/data_manager.dart';
 import 'package:duma_taxi/utils/theme/settings.dart';
+import 'package:duma_taxi/utils/urls.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -21,7 +22,7 @@ class Api {
     List<Country> data = [];
     try {
       var res = await Dio().get(
-        "$baseUrl/country",
+        Urls.country,
         options: Options(
           headers: {
             HttpHeaders.acceptHeader: 'application/json',
@@ -30,9 +31,7 @@ class Api {
         ),
       );
       data = (res.data['data'] as List)
-          .map(
-            (element) => Country.fromJson(element),
-      )
+          .map((element) => Country.fromJson(element))
           .toList();
       return data;
     } on DioException catch (e) {
@@ -45,7 +44,7 @@ class Api {
     List<PaymentMethod> data = [];
     try {
       var res = await Dio().get(
-        "$baseUrl/payment-method",
+        Urls.payment,
         options: Options(
           headers: {
             HttpHeaders.acceptHeader: 'application/json',
@@ -54,9 +53,7 @@ class Api {
         ),
       );
       data = (res.data['data'] as List)
-          .map(
-            (element) => PaymentMethod.fromJson(element),
-      )
+          .map((element) => PaymentMethod.fromJson(element))
           .toList();
       return data;
     } on DioException catch (e) {
@@ -68,16 +65,12 @@ class Api {
   static Future<List<DriversP>> getDriversP() async {
     try {
       var res = await Dio().get(
-        "$baseUrl/driver",
-        options: Options(
-          headers: getHeaders(),
-        ),
+        Urls.drivers,
+        options: Options(headers: getHeaders()),
       );
       List<DriversP> data = (res.data['data'] as List)
           .where((element) => element['location'] != null)
-          .map(
-            (element) => DriversP.fromJson(element),
-      )
+          .map((element) => DriversP.fromJson(element))
           .toList();
       if (data.length > 10) {
         return data.sublist(0, 9);
@@ -90,18 +83,17 @@ class Api {
     return [];
   }
 
-  static Future<List<Place>> searchPlaces(BuildContext context,
-      {required String text}) async {
+  static Future<List<Place>> searchPlaces(
+    BuildContext context, {
+    required String text,
+  }) async {
     List<Place> data = [];
-    String url = "$baseUrl/search/place/new";
     var params = {"textQuery": text, "country": "BI"};
     try {
       var res = await Dio().post(
-        url,
+        Urls.searchPlaces,
         data: params,
-        options: Options(
-          headers: getHeaders(),
-        ),
+        options: Options(headers: getHeaders()),
       );
       final items = res.data['data'];
       if (items is List) {
@@ -117,17 +109,15 @@ class Api {
   }
 
   static Future<Direction?> fetchRoute(
-      LatLng origin, LatLng destination, int polyId) async {
+    LatLng origin,
+    LatLng destination,
+    int polyId,
+  ) async {
     try {
       final url =
           'https://us1.locationiq.com/v1/directions/driving/${origin.longitude},${origin.latitude};'
           '${destination.longitude},${destination.latitude}?key=$iQKey&overview=full';
-      var res = await Dio().get(
-        url,
-        options: Options(
-          headers: getHeaders(),
-        ),
-      );
+      var res = await Dio().get(url, options: Options(headers: getHeaders()));
       dynamic data = res.data;
 
       final points = data['routes'][0]['geometry'];
@@ -135,11 +125,12 @@ class Api {
 
       //Set polyline
       Polyline polyline = Polyline(
-          polylineId: PolylineId("poly$polyId"),
-          geodesic: true,
-          points: routeCoords,
-          width: 4,
-          color: ThemeSettings.lightPrimary);
+        polylineId: PolylineId("poly$polyId"),
+        geodesic: true,
+        points: routeCoords,
+        width: 4,
+        color: ThemeSettings.lightPrimary,
+      );
 
       final route = data['routes'][0];
       final dist = route['distance'];
@@ -170,10 +161,12 @@ class Api {
     return null;
   }
 
-  static Future<List<CarType>> getEstimationPrice(
-      {required String distance, required List<double> distances,required String time}) async {
+  static Future<List<CarType>> getEstimationPrice({
+    required String distance,
+    required List<double> distances,
+    required String time,
+  }) async {
     List<CarType> data = [];
-    String url = "$baseUrl/price/${DataManager().selectedService.id}";
     var params = {
       "country": "BI",
       "distance": distance,
@@ -182,20 +175,18 @@ class Api {
     };
     try {
       var res = await Dio().post(
-        url,
+        "${Urls.getPrices}/${DataManager().selectedService.id}",
         data: params,
-        options: Options(
-          headers: getHeaders(),
-        ),
+        options: Options(headers: getHeaders()),
       );
       data = (res.data['prices'] as List)
           .map(
             (element) => CarType.fromJson(
-          json: element['race_type'],
-          p: element['price'],
-          c: element['currency'],
-        ),
-      )
+              json: element['race_type'],
+              p: element['price'],
+              c: element['currency'],
+            ),
+          )
           .toList();
       return data;
     } on DioException catch (e) {
@@ -203,5 +194,4 @@ class Api {
     }
     return data;
   }
-
 }
