@@ -61,3 +61,17 @@ A Flutter application for requesting taxi rides or parcel delivery services. Use
 ```bash
 git clone https://github.com/AFB317/duma_public.git
 cd duma_public
+```
+
+2. **Install dependencies:**
+   
+```bash
+flutter pub get
+```
+3. **Run the app:**
+   
+```bash
+flutter run
+```
+
+
