@@ -97,9 +97,11 @@ If your app uses APIs, Firebase, or maps, ensure to:
  
  I want you to know that contributions are welcome. Please fork the repository and submit a pull request for review.
 
+
 ## 📄 **License**
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/AFB317/taxi_clone/LICENSE).
+
 
 ## 💡 **Author**
 
