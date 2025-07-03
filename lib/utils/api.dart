@@ -87,7 +87,7 @@ class Api {
     required String text,
   }) async {
     List<Place> data = [];
-    var params = {"textQuery": text, "country": "BI"};
+    var params = {"textQuery": text};
     try {
       var res = await Dio().post(
         Urls.searchPlaces,
