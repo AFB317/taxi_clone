@@ -1,16 +1,41 @@
-# duma_taxi
+# 🚖 Duma Taxi
 
-Request a ride or reserve a driver for you
+A Flutter application for requesting taxi rides or parcel delivery services. Users can create an account or log in, view available drivers on a map, and track their requests in real-time.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ **Features**
 
-A few resources to get you started if this is your first Flutter project:
+- 📍 **Real-time map view** showing nearby drivers
+- 🚕 **Request a taxi ride**
+- 📦 **Request parcel delivery**
+- 👤 **User authentication:** Login and account creation
+- 🔔 **Notifications** for ride or parcel status updates
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 **Screenshots**
+
+| Home Screen | Drivers Map |
+|-------------|-------------|
+| ![Home Screen](screenshots/home.png) | ![Drivers Map](screenshots/map.png) |
+
+> Replace `screenshots/home.png` and `screenshots/map.png` with your actual screenshot paths in the repository.
+
+---
+
+## 🚀 **Getting Started**
+
+### **Prerequisites**
+
+- Flutter SDK (https://flutter.dev/docs/get-started/install)
+- Dart SDK
+- An emulator or a physical device
+
+### **Installation**
+
+1. **Clone this repository:**
+
+```bash
+git clone https://github.com/AFB317/duma_public.git
+cd duma_public
