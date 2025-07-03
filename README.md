@@ -16,9 +16,9 @@ A Flutter application for requesting taxi rides or parcel delivery services. Use
 
 ## 📸 **Screenshots**
 
-| Home Screen | Drivers Map |
+| Home Screen | Available Drivers | Estimation Prices | Real time tracking | Rate Driver
 |-------------|-------------|
-| ![Home Screen](screenshots/duma0.png) | ![Drivers Map](screenshots/duma1.png) |
+| ![Home Screen](screenshots/duma0.png) | ![Available Drivers](screenshots/duma1.png) | ![Estimation Prices](screenshots/duma2.png) | ![Real time tracking](screenshots/duma3.png) | ![Rate Driver](screenshots/duma4.png) |
 
 ---
 
