@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../../utils/constants.dart';
-
 class LoadingPage extends StatelessWidget {
   final Widget child;
   final bool isAsync;
@@ -44,7 +42,7 @@ class LoadingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
+      color: Theme.of(context).colorScheme.secondary.withAlpha(30),
       alignment: Alignment.center,
       child: Stack(
         alignment: Alignment.center,
@@ -54,7 +52,7 @@ class LoadingContent extends StatelessWidget {
             size: 70,
           ),
           Image.asset(
-            appImage,
+            "APP IMAGE",
             width: 40,
           ),
         ],

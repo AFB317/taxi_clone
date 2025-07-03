@@ -1,8 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../utils/constants.dart';
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
@@ -23,7 +20,7 @@ class _SplashWidgetState extends State<SplashWidget> {
           width: size.width * 0.4,
           height: size.height * 0.4,
           child: Image.asset(
-            appImage,
+            "APP IMAGE",
           ),
         ),
         AnimatedPositioned(
@@ -32,30 +29,9 @@ class _SplashWidgetState extends State<SplashWidget> {
           child: Column(
             children: [
               Image.asset(
-                afrImage,
+                "APP IMAGE",
                 width: 45,
                 height: 45,
-              ),
-              DefaultTextStyle(
-                style: GoogleFonts.openSans(
-                  textStyle: const TextStyle(
-                    fontSize: 12.0,
-                    letterSpacing: 1,
-                    color: Colors.black,
-                  ),
-                ),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    WavyAnimatedText(
-                      "AFRIREGISTER S.A",
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    WavyAnimatedText('Always going the extra mile'),
-                  ],
-                  isRepeatingAnimation: true,
-                ),
               ),
             ],
           ),

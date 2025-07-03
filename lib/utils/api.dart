@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -168,10 +167,8 @@ class Api {
   }) async {
     List<CarType> data = [];
     var params = {
-      "country": "BI",
       "distance": distance,
       "time": time,
-      "distances": jsonEncode(distances),
     };
     try {
       var res = await Dio().post(
@@ -182,7 +179,7 @@ class Api {
       data = (res.data['prices'] as List)
           .map(
             (element) => CarType.fromJson(
-              json: element['race_type'],
+              json: element['type'],
               p: element['price'],
               c: element['currency'],
             ),
