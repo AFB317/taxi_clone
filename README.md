@@ -34,10 +34,6 @@ A clone of Duma Taxi, which is a Flutter application for requesting taxi rides o
       <img src="screenshots/duma3.png" width="120" alt="Real time tracking"/><br>
       <b>Tracking</b>
     </td>
-    <td align="center">
-      <img src="screenshots/duma4.png" width="120" alt="Rate Driver"/><br>
-      <b>Rating</b>
-    </td>
   </tr>
 </table>
 
