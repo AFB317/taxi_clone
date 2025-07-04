@@ -92,6 +92,19 @@ If your app uses APIs, Firebase, or maps, ensure to:
 
 3. screenshots/ Project screenshots
 
+```
+lib/
+├── models/                # Data Models
+├── screens/               # User Interface
+│   ├── Pages/             
+│   ├── Widgets/           
+├── utils/                 # User Interface
+│   ├── api/               # Api endpoints
+│   ├── functions/         # App functions
+│   ├── constants.dart     # Constants
+└── main.dart              # App entry point with theme configuration
+```
+
 
 ## 🙌 **Contributing**
  
