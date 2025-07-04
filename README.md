@@ -81,17 +81,7 @@ If your app uses APIs, Firebase, or maps, ensure to:
 
 
 ## 📂 **Project Structure**
-
-1. lib/ 
-   - utils/  API endpoints, Constants, and Functions
-   - models/        Data Models
-   - screens/       UI screens and Widgets
-     main.dart      Entry Point
     
-2. assets/ Images and other Assets
-
-3. screenshots/ Project screenshots
-
 ```
 lib/
 ├── models/                # Data Models
@@ -103,6 +93,9 @@ lib/
 │   ├── functions/         # App functions
 │   ├── constants.dart     # Constants
 └── main.dart              # App entry point with theme configuration
+assets/                    # Images and other assets
+lang/                      # languages
+screenshots/               # App screenshots
 ```
 
 
