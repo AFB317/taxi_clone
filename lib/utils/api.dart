@@ -29,6 +29,7 @@ class Api {
           },
         ),
       );
+      //Change the way you handle data
       data = (res.data['data'] as List)
           .map((element) => Country.fromJson(element))
           .toList();
@@ -113,6 +114,7 @@ class Api {
     int polyId,
   ) async {
     try {
+      //Add your own IqKey
       final url =
           'https://us1.locationiq.com/v1/directions/driving/${origin.longitude},${origin.latitude};'
           '${destination.longitude},${destination.latitude}?key=$iQKey&overview=full';
@@ -176,12 +178,10 @@ class Api {
         data: params,
         options: Options(headers: getHeaders()),
       );
-      data = (res.data['prices'] as List)
+      data = (res.data as List)
           .map(
             (element) => CarType.fromJson(
-              json: element['type'],
               p: element['price'],
-              c: element['currency'],
             ),
           )
           .toList();
